@@ -1,54 +1,74 @@
-# React + TypeScript + Vite
+GitHub Kanban Board
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Описание
 
-Currently, two official plugins are available:
+GitHub Kanban Board — это тестовая работа, выполненная по техническому заданию. Приложение реализует просмотр задач (issues) из репозиториев GitHub в виде канбан-доски.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Функциональность
 
-## Expanding the ESLint configuration
+Пользователь вводит URL репозитория в поле ввода и нажимает "Load".
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Приложение загружает задачи из репозитория через GitHub API.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Задачи распределяются по 3 колонкам:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+To Do (все новые задачи)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+In Progress (открытые задачи с назначенным исполнителем)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Done (закрытые задачи)
+
+Поддержка drag-and-drop для перемещения задач между колонками и изменения их порядка.
+
+Сохранение текущего состояния задач между поисковыми сессиями и перезапусками браузера.
+
+Возможность перехода по ссылке на профиль владельца репозитория и сам репозиторий.
+
+Технологии
+
+Приложение разработано с использованием следующих технологий:
+
+React 18 (функциональные компоненты, хуки)
+
+TypeScript
+
+Vite (в качестве инструмента сборки)
+
+UI-библиотека: Ant Design
+
+Менеджер состояния: Redux
+
+Тестирование: Vitest (тесты не реализованы)
+
+Установка и запуск
+
+Клонируйте репозиторий:
+
+git clone https://github.com/cllown/kanban.git
+cd kanban
+
+Установите зависимости:
+
+npm install
+
+Запустите приложение:
+
+npm start
+
+Откройте в браузере: http://localhost:3000
+
+Оценка проекта
+
+При выполнении задания оценивались:
+
+Работоспособность приложения
+
+Структура проекта
+
+Качество кода (читабельность, оформление)
+
+Знание React и его экосистемы
+
+Наличие тестов (не реализованы)
+
+Данный проект является тестовой работой и разработан в рамках технического задания.
